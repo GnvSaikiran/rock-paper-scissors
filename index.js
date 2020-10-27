@@ -8,6 +8,11 @@
       // returns the winner of each round
       function playRound(playerSelection) {
         let result = document.getElementById('info');
+        result.style.fontSize = "20px";
+
+        let computerScore  = document.getElementById('computer-score');
+        let playerScore = document.getElementById('player-score');
+
         let computerSelection = computerPlay();
         if (playerSelection == computerSelection) {
           result.textContent = 'Draw'
@@ -19,15 +24,29 @@
           (playerSelection == "Scissor" && computerSelection == "Rock")
         ) {
           result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
-          document.getElementById('computer-score').textContent++;
+          computerScore.textContent++;
           console.log(
             `You Lose! ${computerSelection} beats ${playerSelection}`
           );
+          if (computerScore.textContent == 5) {
+            result.textContent = "Computer Won"
+            result.style.fontSize = "40px";
+            computerScore.textContent = 0;
+            playerScore.textContent = 0;
+            return;
+          }
           return "computer";
         } else {
           result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
-          document.getElementById('player-score').textContent++;
+          playerScore.textContent++;
           console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+          if (playerScore.textContent == 5) {
+            result.textContent = "Player Won"
+            result.style.fontSize = "40px";
+            computerScore.textContent = 0;
+            playerScore.textContent = 0;
+            return;
+          }
           return "player";
         }
       }
