@@ -1,0 +1,19 @@
+.buttons {
+  height: 40px;
+  width: 80px;
+  border: 1px solid teal;
+  border-radius: 8%;
+  margin: 10px;
+}
+
+.buttons:hover {
+  background-color: teal;
+  color: white;
+  height: 50px;
+  width: 100px;
+  border: 2px solid teal;
+}
+
+body {
+  text-align: center;
+}
