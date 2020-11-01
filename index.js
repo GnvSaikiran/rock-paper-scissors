@@ -14,14 +14,14 @@ function playRound(playerSelection) {
   let playerScore = document.getElementById('player-score');
 
   let computerSelection = computerPlay();
-  if (playerSelection === computerSelection) {
+  if (playerSelection == computerSelection) {
     result.textContent = 'Draw'
     console.log(`Draw`);
     return;
   } else if (
-    (playerSelection === "Rock" && computerSelection === "Paper") ||
-    (playerSelection === "Paper" && computerSelection === "Scissor") ||
-    (playerSelection === "Scissor" && computerSelection === "Rock")
+    (playerSelection == "Rock" && computerSelection == "Paper") ||
+    (playerSelection == "Paper" && computerSelection == "Scissor") ||
+    (playerSelection == "Scissor" && computerSelection == "Rock")
   ) {
     result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
     computerScore.textContent++;
