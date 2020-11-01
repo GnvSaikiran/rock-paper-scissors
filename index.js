@@ -28,7 +28,7 @@ function playRound(playerSelection) {
     console.log(
       `You Lose! ${computerSelection} beats ${playerSelection}`
     );
-    if (computerScore.textContent === 5) {
+    if (computerScore.textContent == 5) {
       result.textContent = "Computer Won"
       result.style.fontSize = "40px";
       computerScore.textContent = 0;
@@ -40,7 +40,7 @@ function playRound(playerSelection) {
     result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
     playerScore.textContent++;
     console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
-    if (playerScore.textContent === 5) {
+    if (playerScore.textContent == 5) {
       result.textContent = "Player Won"
       result.style.fontSize = "40px";
       computerScore.textContent = 0;
